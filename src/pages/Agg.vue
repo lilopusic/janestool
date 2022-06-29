@@ -41,6 +41,7 @@
 <script setup>
 import { ref } from 'vue';
 import axios from 'axios';
+import fun from '../composables/confetti.js'
 
 const startRow = ref(3);
 const maxCol = ref(50);
@@ -74,7 +75,8 @@ function merge() {
   form.append("maxCol", maxCol.value)
 
   axios.post(host + '/upload', form, configs).then(res => {
-    merging.value = false;
+    merging.value = false
+    fun()
     newWin(host + '/getFile/' + res.data, )
   }).catch(() => {
     merging.value = false;
