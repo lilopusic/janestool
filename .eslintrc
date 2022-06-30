@@ -2,6 +2,7 @@
     "extends": "@antfu",
     "rules": {
         "singleline-html-element-content-newline": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "no-alert":"off"
     }
 }
