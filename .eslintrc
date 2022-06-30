@@ -1,6 +1,7 @@
 {
     "extends": "@antfu",
     "rules": {
-        "singleline-html-element-content-newline": "off"
+        "singleline-html-element-content-newline": "off",
+        "no-console": "off"
     }
 }
