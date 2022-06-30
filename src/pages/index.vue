@@ -1,4 +1,4 @@
 <route lang="yaml">
 redirect:
-  name: Agg
+  name: agg
 </route>
