@@ -39,8 +39,8 @@
   </n-button-group>
 </template>
 <script setup>
-import { ref } from 'vue';
-import axios from 'axios';
+import { ref } from 'vue'
+import axios from 'axios'
 import fun from '../composables/confetti.js'
 
 const startRow = ref(3);
