@@ -5,16 +5,12 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Myfooter: typeof import('./src/components/myfooter.vue')['default']
     NButton: typeof import('naive-ui')['NButton']
     NButtonGroup: typeof import('naive-ui')['NButtonGroup']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NDivider: typeof import('naive-ui')['NDivider']
-    NH3: typeof import('naive-ui')['NH3']
-    NInputNumber: typeof import('naive-ui')['NInputNumber']
-    NResult: typeof import('naive-ui')['NResult']
-    NText: typeof import('naive-ui')['NText']
-    NTooltip: typeof import('naive-ui')['NTooltip']
-    NUpload: typeof import('naive-ui')['NUpload']
-    NUploadDragger: typeof import('naive-ui')['NUploadDragger']
+    NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
