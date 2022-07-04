@@ -5,6 +5,8 @@ import fun from '../composables/confetti.js'
 
 const startRow = ref(3)
 const maxCol = ref(50)
+const sortCol = ref(1)
+
 const merging = ref(false)
 
 const templateUpload = ref(null)
@@ -33,6 +35,7 @@ function merge() {
 
   form.append('startRow', startRow.value)
   form.append('maxCol', maxCol.value)
+  form.append('sortCol', sortCol.value)
 
   axios.post(`${host}/upload`, form, configs).then((res) => {
     merging.value = false
@@ -86,7 +89,14 @@ function newWin(url) {
     <template #trigger>
       <n-input-number v-model:value="maxCol" placeholder="请输入数字..." clearable />
     </template>
-    合并最大列数,默认为50
+    合并最大列数,默认为五十
+  </n-tooltip>
+
+  <n-tooltip placement="top-start" trigger="hover">
+    <template #trigger>
+      <n-input-number v-model:value="sortCol" placeholder="请输入数字..." clearable />
+    </template>
+    根据哪一列排序,默认为一
   </n-tooltip>
 
   <n-divider />
