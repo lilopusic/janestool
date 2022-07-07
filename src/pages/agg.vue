@@ -77,27 +77,29 @@ function newWin(url) {
   <n-h3 class="text-center font-bold">
     Excel合并工具
   </n-h3>
-
-  <n-tooltip placement="top-start" trigger="hover">
-    <template #trigger>
-      <n-input-number v-model:value="startRow" placeholder="请输入数字..." clearable />
-    </template>
-    从第几行开始合并,默认为三
-  </n-tooltip>
-
-  <n-tooltip placement="top-start" trigger="hover">
-    <template #trigger>
-      <n-input-number v-model:value="maxCol" placeholder="请输入数字..." clearable />
-    </template>
-    合并最大列数,默认为五十
-  </n-tooltip>
-
-  <n-tooltip placement="top-start" trigger="hover">
-    <template #trigger>
-      <n-input-number v-model:value="sortCol" placeholder="请输入数字..." clearable />
-    </template>
-    根据哪一列排序,默认为一
-  </n-tooltip>
+  <n-space justify="center">
+    <n-tooltip placement="top-start" trigger="hover">
+      <template #trigger>
+        <n-input-number v-model:value="startRow" placeholder="请输入数字..." clearable />
+      </template>
+      从第几行开始合并,默认为三
+    </n-tooltip>
+    <n-tooltip placement="top-start" trigger="hover">
+      <template #trigger>
+        <n-input-number v-model:value="maxCol" placeholder="请输入数字..." clearable />
+      </template>
+      合并最大列数,默认为五十
+    </n-tooltip>
+    <n-tooltip placement="top-start" trigger="hover">
+      <template #trigger>
+        <n-input-number v-model:value="sortCol" placeholder="请输入数字..." clearable />
+      </template>
+      根据哪一列排序,默认为一
+    </n-tooltip>
+    <n-tag size="large" type="info" :bordered="false">
+      从零开始计数..
+    </n-tag>
+  </n-space>
 
   <n-divider />
 
