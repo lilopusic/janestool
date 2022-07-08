@@ -13,11 +13,14 @@ const toggleDark = useToggle(isDark)
         <n-button @click="$router.push('/agg')">
           Agg
         </n-button>
+        <n-button @click="$router.push('/english')">
+          English
+        </n-button>
         <n-button @click="$router.push('/whatever')">
           Whatever
         </n-button>
         <n-button @click="toggleDark()">
-          {{ isDark ? 'Dark' : 'Light' }}
+          {{ isDark ? '⚪ Light' : '⚫ Dark' }}
         </n-button>
       </n-button-group>
 
