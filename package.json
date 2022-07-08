@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.25.2",
+    "@supabase/supabase-js": "^1.35.4",
     "@vitejs/plugin-vue": "^2.3.3",
+    "async": "^3.2.4",
     "autoprefixer": "^10.4.7",
     "naive-ui": "^2.30.6",
     "postcss": "^8.4.14",
