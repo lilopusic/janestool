@@ -102,7 +102,7 @@ watch(inputTranslation, (value) => {
 
 <template>
   <n-space vertical>
-    <n-input v-model:value="content" disabled type="textarea" placeholder="Waiting..." />
+    <n-input v-model:value="content" readonly type="textarea" placeholder="Waiting..." />
     <n-input v-model:value="inputTranslation" type="textarea" placeholder="Try to translate.." />
 
     <n-button-group>
@@ -112,6 +112,8 @@ watch(inputTranslation, (value) => {
       <n-button @click="speak">
         Speak
       </n-button>
+    </n-button-group>
+    <n-button-group>
       <n-button @click="showAnswer = !showAnswer">
         {{ !showAnswer ? 'Show Answer' : 'Hide Answer' }}
       </n-button>
@@ -124,7 +126,7 @@ watch(inputTranslation, (value) => {
     </n-button-group>
     <n-input
       v-model:value="answer"
-      disabled
+      readonly
       type="textarea"
       placeholder="Waiting..."
     />
