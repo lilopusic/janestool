@@ -8,6 +8,7 @@ import Pages from 'vite-plugin-pages'
 export default defineConfig({
   server: {
     port: 4000,
+    host: true,
   },
   plugins: [
     vue(),
