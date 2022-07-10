@@ -24,7 +24,7 @@ const matchPercent = ref(0.0)
 const tipRate = ref(0)
 
 // Determine by showAnswer and tipRate
-const answer = ref('')
+const answer = ref([])
 
 function randomFetch() {
   reset()
@@ -71,7 +71,7 @@ function palindrome(str) {
 randomFetch()
 
 watch([showAnswer, tipRate, translation], () => {
-  if (showAnswer.value) { answer.value = translation.value }
+  if (showAnswer.value) { answer.value = translation.value.split('') }
   else {
     const length = translation.value.length
     const strArr = []
@@ -83,7 +83,7 @@ watch([showAnswer, tipRate, translation], () => {
       const index = Math.round(Math.random() * (length - 1))
       strArr[index] = translation.value[index]
     }
-    answer.value = strArr.join('')
+    answer.value = strArr
   }
 }, { immediate: true })
 
@@ -117,19 +117,32 @@ watch(inputTranslation, (value) => {
       <n-button @click="showAnswer = !showAnswer">
         {{ !showAnswer ? 'Show Answer' : 'Hide Answer' }}
       </n-button>
-      <n-button @click="tipRate += 10">
+      <n-button :disabled="showAnswer" @click="tipRate += 10">
         Help
       </n-button>
       <n-button disabled>
         Matched: {{ matchPercentOutput.toFixed(0) }}%
       </n-button>
     </n-button-group>
-    <n-input
-      v-model:value="answer"
-      readonly
-      type="textarea"
-      placeholder="Waiting..."
-    />
+    <!-- Answer area -->
+    <div class="flex flex-wrap">
+      <div
+        v-for="(char, index) in answer"
+        :key="index"
+        class="
+        flex justify-center text-center items-center
+        w-8 h-8
+        m-1
+        shadow-md
+        bg-gray-400/25"
+      >
+        <span
+          class="flex justify-center text-center items-center"
+        >
+          {{ char }}
+        </span>
+      </div>
+    </div>
   </n-space>
 </template>
 
