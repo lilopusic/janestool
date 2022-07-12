@@ -5,6 +5,7 @@ import '@vue/runtime-core'
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    NAutoComplete: typeof import('naive-ui')['NAutoComplete']
     NButton: typeof import('naive-ui')['NButton']
     NButtonGroup: typeof import('naive-ui')['NButtonGroup']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
@@ -12,6 +13,9 @@ declare module '@vue/runtime-core' {
     NGlobalStyle: typeof import('naive-ui')['NGlobalStyle']
     NH3: typeof import('naive-ui')['NH3']
     NInput: typeof import('naive-ui')['NInput']
+    NInputEmail: typeof import('naive-ui')['NInputEmail']
+    NInputGroup: typeof import('naive-ui')['NInputGroup']
+    NInputGroupLabel: typeof import('naive-ui')['NInputGroupLabel']
     NInputNumber: typeof import('naive-ui')['NInputNumber']
     NResult: typeof import('naive-ui')['NResult']
     NSpace: typeof import('naive-ui')['NSpace']
