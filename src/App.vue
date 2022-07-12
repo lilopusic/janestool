@@ -16,6 +16,9 @@ const toggleDark = useToggle(isDark)
         <n-button @click="$router.push('/english')">
           English
         </n-button>
+        <n-button @click="$router.push('/private')">
+          Private
+        </n-button>
         <n-button @click="$router.push('/whatever')">
           Whatever
         </n-button>

@@ -3,17 +3,12 @@
 // Store at supabase
 // Thanks to these open source projects.
 
-import { createClient } from '@supabase/supabase-js'
 import { format } from 'date-fns'
 import { ref, watch } from 'vue'
 import { TransitionPresets, useTransition } from '@vueuse/core'
-
+import supabase from '../composables/supabase'
 import fun from '../composables/confetti'
 import similar from '../composables/similar'
-
-const supabaseUrl = 'https://ldzvczkewdibfwvhqutn.supabase.co'
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxkenZjemtld2RpYmZ3dmhxdXRuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTA1OTYxNjUsImV4cCI6MTk2NjE3MjE2NX0.FIg0tCVPd5AtHfCA0SYeiV0r0gyFETOwLbsyQjC5NXI'
-const supabase = createClient(supabaseUrl, SUPABASE_KEY)
 
 const content = ref('')
 const translation = ref('')
