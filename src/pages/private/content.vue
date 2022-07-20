@@ -1,5 +1,9 @@
 <script setup>
+import supabase from '../../composables/supabase'
 
+function logout() {
+  supabase.auth.signOut()
+}
 </script>
 
 <template>
@@ -10,6 +14,9 @@
   >
     <template #footer>
       <n-button>现在正在建设中</n-button>
+      <n-button @click="logout">
+        注销
+      </n-button>
     </template>
   </n-result>
 </template>

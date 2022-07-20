@@ -16,5 +16,6 @@ export default defineConfig({
       resolvers: [NaiveUiResolver()],
     }),
     Pages(),
+    // crx({ manifest }),
   ],
 })
