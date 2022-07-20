@@ -6,7 +6,7 @@ import Content from './content.vue'
 
 userRef.value = supabase.auth.user()
 supabase.auth.onAuthStateChange((_, session) => {
-  userRef.value = session.user
+  userRef.value = session?.user
 })
 </script>
 

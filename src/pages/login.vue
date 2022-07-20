@@ -41,7 +41,6 @@ async function register() {
       default-value="signin"
       size="large"
       justify-content="center"
-      type="segment"
       animated
     >
       <n-tab-pane name="signin" tab="登录">
