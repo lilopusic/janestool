@@ -21,9 +21,9 @@ const filesUpload = ref(null)
 
 const files = ref([])
 
-const host = 'http://localhost:5000'
+// const host = 'http://localhost:5000'
 // const host = "http://23.105.223.132"
-// const host = 'https://secret-lowlands-59975.herokuapp.com'
+const host = 'https://secret-lowlands-59975.herokuapp.com'
 function merge() {
   if (files.value.length === 0) {
     alert('请上传合并文件!')
