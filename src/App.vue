@@ -13,6 +13,9 @@ const toggleDark = useToggle(isDark)
         <n-button @click="$router.push('/agg')">
           Agg
         </n-button>
+        <n-button @click="$router.push('/pdf')">
+          Pdf
+        </n-button>
         <n-button @click="$router.push('/english')">
           English
         </n-button>
