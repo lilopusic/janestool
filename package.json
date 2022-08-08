@@ -22,7 +22,7 @@
     "async": "^3.2.4",
     "autoprefixer": "^10.4.7",
     "naive-ui": "^2.30.6",
-    "postcss": "^8.4.14",
+    "postcss": "^8.4.16",
     "tailwindcss": "^3.1.4",
     "unplugin-auto-import": "^0.9.1",
     "unplugin-vue-components": "^0.20.1",
