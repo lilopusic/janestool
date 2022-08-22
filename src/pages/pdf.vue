@@ -1,19 +1,10 @@
 <script setup>
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import axios from 'axios'
 import fun from '../composables/confetti.js'
+import { useEmail } from '../composables/email'
 
-const emailAddress = ref('')
-
-const emailOptions = computed(() => {
-  return ['@qq.com', '@lenovo.com', '@163.com'].map((suffix) => {
-    const prefix = emailAddress.value.split('@')[0]
-    return {
-      label: prefix + suffix,
-      value: prefix + suffix,
-    }
-  })
-})
+const { emailAddress, emailOptions } = useEmail()
 
 const merging = ref(false)
 
