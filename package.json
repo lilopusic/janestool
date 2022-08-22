@@ -21,7 +21,7 @@
     "@vitejs/plugin-vue": "^3.0.1",
     "async": "^3.2.4",
     "autoprefixer": "^10.4.8",
-    "naive-ui": "^2.32.1",
+    "naive-ui": "^2.32.2",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.4",
     "unplugin-auto-import": "^0.9.1",
