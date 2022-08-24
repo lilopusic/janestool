@@ -19,6 +19,7 @@ const matchPercent = ref(0.0)
 const tipRate = ref(0)
 
 // Determine by showAnswer and tipRate
+const anwserIndex = ref([])
 const answer = ref([])
 
 function randomFetch() {
@@ -44,6 +45,8 @@ function randomFetch() {
 }
 
 function reset() {
+  answer.value = []
+  anwserIndex.value = []
   showAnswer.value = false
   matchPercent.value = 0
   inputTranslation.value = ''
@@ -80,6 +83,7 @@ watch([showAnswer, tipRate, translation], () => {
     }
     answer.value = strArr
   }
+  anwserIndex.value = answer.value.map((_, index) => index)
 }, { immediate: true })
 
 const matchPercentOutput = useTransition(matchPercent, {
@@ -93,6 +97,10 @@ watch(inputTranslation, (value) => {
   if (rate > minCorrectRate)
     fun()
 })
+
+function shuffleAnwser() {
+  anwserIndex.value.sort(() => (Math.random() > 0.5 ? 1 : -1))
+}
 </script>
 
 <template>
@@ -112,6 +120,9 @@ watch(inputTranslation, (value) => {
       <n-button @click="showAnswer = !showAnswer">
         {{ !showAnswer ? 'Show Answer' : 'Hide Answer' }}
       </n-button>
+      <n-button @click="shuffleAnwser">
+        Shuffle
+      </n-button>
       <n-button :disabled="showAnswer" @click="tipRate += 10">
         Help
       </n-button>
@@ -120,9 +131,9 @@ watch(inputTranslation, (value) => {
       </n-button>
     </n-button-group>
     <!-- Answer area -->
-    <div class="flex flex-wrap">
+    <div v-auto-animate class="flex flex-wrap sm:w-full md:w-1/3">
       <div
-        v-for="(char, index) in answer"
+        v-for="(index) in anwserIndex"
         :key="index"
         class="
         flex justify-center text-center items-center
@@ -131,11 +142,7 @@ watch(inputTranslation, (value) => {
         shadow-md
         bg-gray-400/25"
       >
-        <span
-          class="flex justify-center text-center items-center"
-        >
-          {{ char }}
-        </span>
+        {{ answer[index] }}
       </div>
     </div>
   </n-space>
