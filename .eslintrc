@@ -4,5 +4,6 @@
         "singleline-html-element-content-newline": "off",
         "no-console": "off",
         "no-alert":"off"
-    }
+    },
+    "ignorePatterns": ["**/src-tauri"]
 }
