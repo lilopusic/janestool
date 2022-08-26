@@ -11,4 +11,7 @@ const router = createRouter({
   routes,
 })
 
-createApp(App).use(router).use(autoAnimatePlugin).mount('#app')
+createApp(App)
+  .use(router)
+  .use(autoAnimatePlugin)
+  .mount('#app')
