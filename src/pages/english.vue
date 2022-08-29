@@ -5,13 +5,16 @@
 
 import { format } from 'date-fns'
 import { ref, watch } from 'vue'
-import { TransitionPresets, useTransition } from '@vueuse/core'
+import { TransitionPresets, useClipboard, useTransition } from '@vueuse/core'
 import supabase from '../composables/supabase'
 import fun from '../composables/confetti'
 import similar from '../composables/similar'
 
 const content = ref('')
 const translation = ref('')
+
+const { isSupported, copy } = useClipboard()
+
 const inputTranslation = ref('')
 const showAnswer = ref(false)
 const fetching = ref(false)
@@ -123,8 +126,11 @@ function shuffleAnwser() {
       <n-button @click="shuffleAnwser">
         Shuffle
       </n-button>
-      <n-button :disabled="showAnswer" @click="tipRate += 10">
+      <n-button v-show="!showAnswer" :disabled="showAnswer" @click="tipRate += 10">
         Help
+      </n-button>
+      <n-button v-show="isSupported && showAnswer" @click="copy(translation)">
+        Copy
       </n-button>
       <n-button disabled>
         Matched: {{ matchPercentOutput.toFixed(0) }}%
@@ -139,7 +145,8 @@ function shuffleAnwser() {
         flex justify-center text-center items-center
         w-8 h-8
         m-1
-        shadow-md
+        shadow-sm
+        rounded-sm
         bg-gray-400/25"
       >
         {{ answer[index] }}
