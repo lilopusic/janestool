@@ -110,16 +110,16 @@ function shuffleAnwser() {
   <n-space vertical>
     <n-input v-model:value="content" readonly type="textarea" placeholder="Waiting..." />
     <n-input v-model:value="inputTranslation" type="textarea" placeholder="Try to translate.." />
-
-    <n-button-group>
+    <div>
       <n-button :loading="fetching" @click="randomFetch">
         One More
       </n-button>
       <n-button @click="speak">
         Speak
       </n-button>
-    </n-button-group>
-    <n-button-group>
+    </div>
+
+    <div>
       <n-button @click="showAnswer = !showAnswer">
         {{ !showAnswer ? 'Show Answer' : 'Hide Answer' }}
       </n-button>
@@ -135,9 +135,9 @@ function shuffleAnwser() {
       <n-button disabled>
         Matched: {{ matchPercentOutput.toFixed(0) }}%
       </n-button>
-    </n-button-group>
+    </div>
     <!-- Answer area -->
-    <div v-auto-animate class="flex flex-wrap sm:w-full md:w-1/3">
+    <div v-auto-animate class="flex flex-wrap w-full sm:w-full md:w-1/2 lg:w-1/3">
       <div
         v-for="(index) in anwserIndex"
         :key="index"

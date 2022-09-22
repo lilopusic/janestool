@@ -9,26 +9,24 @@ const toggleDark = useToggle(isDark)
 <template>
   <n-config-provider :theme="isDark ? darkTheme : lightTheme">
     <div class="box-border p-4 w-full">
-      <n-button-group>
-        <n-button @click="$router.push('/agg')">
-          Agg
-        </n-button>
-        <n-button @click="$router.push('/pdf')">
-          Pdf
-        </n-button>
-        <n-button @click="$router.push('/english')">
-          English
-        </n-button>
-        <n-button @click="$router.push('/private')">
-          Private
-        </n-button>
-        <n-button @click="$router.push('/whatever')">
-          Whatever
-        </n-button>
-        <n-button @click="toggleDark()">
-          {{ isDark ? '⚪ Light' : '⚫ Dark' }}
-        </n-button>
-      </n-button-group>
+      <n-button @click="$router.push('/agg')">
+        Agg
+      </n-button>
+      <n-button @click="$router.push('/pdf')">
+        Pdf
+      </n-button>
+      <n-button @click="$router.push('/english')">
+        English
+      </n-button>
+      <n-button @click="$router.push('/private')">
+        Private
+      </n-button>
+      <n-button @click="$router.push('/whatever')">
+        Whatever
+      </n-button>
+      <n-button @click="toggleDark()">
+        {{ isDark ? '⚪ Light' : '⚫ Dark' }}
+      </n-button>
 
       <n-divider />
       <router-view />
