@@ -21,7 +21,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
     "@crxjs/vite-plugin": "^1.0.14",
-    "@supabase/supabase-js": "^1.35.6",
+    "@supabase/supabase-js": "^2.0.0",
     "@vitejs/plugin-vue": "^3.1.0",
     "async": "^3.2.4",
     "autoprefixer": "^10.4.11",
